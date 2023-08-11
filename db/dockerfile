@@ -1,0 +1,7 @@
+FROM postgres
+
+LABEL author="Zaki"
+LABEL description="Postgres Image for technical test"
+LABEL version="1.0"
+
+COPY *.sql /docker-entrypoint-initdb.d/
