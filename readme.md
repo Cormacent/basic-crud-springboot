@@ -1,2 +1,2 @@
 ### init setup
-- for run database use `docker-compose -f ./db/docker-compose.yml`
+- for run database use `docker-compose -f ./db/docker-compose.yml up -d`

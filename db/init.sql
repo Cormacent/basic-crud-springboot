@@ -1,3 +1,8 @@
+-- CREATE USER zaki WITH PASSWORD 'zaki';
+-- CREATE DATABASE zaki;
+-- GRANT ALL PRIVILEGES ON DATABASE zaki TO zaki;
+
+-- \c zaki
 
 -- CREATE TYPE
 DROP TYPE IF EXISTS user_status;
