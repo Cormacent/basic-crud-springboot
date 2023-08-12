@@ -33,10 +33,23 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public Optional<Object> partialUpdate(User user) {
+    public Optional<User> partialUpdate(User user) {
         log.debug("Request to partialy update User : {}", user.toString());
         return userRepository.findById(user.getUserId())
                 .map(existingUser -> {
+                    if(user.getNamaLengkap() !=null){
+                        existingUser.setNamaLengkap(user.getNamaLengkap());
+                    }
+                    if(user.getPassword() !=null){
+                        existingUser.setPassword(user.getPassword());
+                    }
+                    if(user.getStatus() !=null){
+                        existingUser.setStatus(user.getStatus());
+                    }
+                    if(user.getUsername() !=null){
+                        existingUser.setUsername(user.getUsername());
+                    }
+
                     return existingUser;
                 })
                 .map(userRepository::save);
